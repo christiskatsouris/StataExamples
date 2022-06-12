@@ -1,0 +1,2 @@
+# StataExamples
+Teaching Page
