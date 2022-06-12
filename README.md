@@ -90,17 +90,17 @@ graph combine r_DJIA r_SP500 r_Nasdaq, cols(3) name(log_returns, replace)
 
 // Fitting univariate GARCH models to time series observations
 
-*GARCH(1,1)
+// GARCH(1,1)
 foreach x in DJIA SP500 Nasdaq {
 arch r_`x' L.r_`x', arch(1) garch(1)
 }
 
-*T-GARCH 
+// T-GARCH 
 foreach x in DJIA SP500 Nasdaq {
 arch r_`x' L.r_`x', arch(1) garch(1) tarch(1)
 }
 
-*GARCH-M
+// GARCH-M
 foreach x in DJIA SP500 Nasdaq {
 arch r_`x' L.r_`x', archm arch(1) garch(1)
 }
