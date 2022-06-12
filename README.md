@@ -8,7 +8,7 @@ We begin by considering a small simulation study for the parameter of a linear r
 
 $$ y_i = \beta x_i + e_i, \ \ \ \text{for} \ \ i = 1,...,n.$$
 
-```R
+```Stata
 
 set seed 1234
 clear all
