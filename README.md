@@ -6,7 +6,7 @@ In this teaching page we provide some useful examples for implementation in Stat
 
 
 
-### [B.] Applied Time Series Econometrics
+### [B]. Applied Time Series Econometrics
 
 
-### [C.] Resampling Techniques
+### [C]. Resampling Techniques
