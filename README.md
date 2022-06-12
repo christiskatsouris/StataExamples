@@ -67,6 +67,54 @@ twoway (line return_SP500 t)
 twoway (line SP500 t), title (Time Series Plot - S&P500 Prices)
 twoway (line return_SP500 t), title (Time Series Plot - Actual Returns of S&P500 Prices)
 
+```
+
+## Example: Arch and Garch modelling in Stata
+
+```Stata
+
+gen time=_n
+tsset time
+
+// generate log-return
+foreach x in DJIA SP500 Nasdaq {
+gen ln_`x'=log(`x')
+gen r_`x'=D.ln_`x'
+}
+
+foreach x in r_DJIA r_SP500 r_Nasdaq {
+qui tsline `x', name(`x', replace)
+}
+
+graph combine r_DJIA r_SP500 r_Nasdaq, cols(3) name(log_returns, replace)
+
+// Fitting univariate GARCH models to time series observations
+
+*GARCH(1,1)
+foreach x in DJIA SP500 Nasdaq {
+arch r_`x' L.r_`x', arch(1) garch(1)
+}
+
+*T-GARCH 
+foreach x in DJIA SP500 Nasdaq {
+arch r_`x' L.r_`x', arch(1) garch(1) tarch(1)
+}
+
+*GARCH-M
+foreach x in DJIA SP500 Nasdaq {
+arch r_`x' L.r_`x', archm arch(1) garch(1)
+}
+
+// Fitting multivariate GARCH models to time series observations
+
+// Constant conditional correlation (CCC)
+mgarch ccc (r_DJIA r_SP500 r_Nasdaq = L.r_DJIA L.r_SP500 L.r_Nasdaq), arch(1) garch(1) nolog vsquish
+
+// Dynamic conditional correlation (DCC)
+mgarch dcc (r_DJIA r_SP500 r_Nasdaq = L.r_DJIA L.r_SP500 L.r_Nasdaq), arch(1) garch(1) nolog vsquish
+
+// Varying conditional correlation (VCC)
+mgarch vcc (r_DJIA r_SP500 r_Nasdaq = L.r_DJIA L.r_SP500 L.r_Nasdaq), arch(1) garch(1) nolog vsquish
 
 ```
 
