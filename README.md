@@ -42,14 +42,14 @@ simulate beta=r(beta) se=r(se), reps(100): mcexample
 ```Stata
 
 // Time series time is set as the increasing number of observations
-gen t=_n
+generate t=_n
 tsset t
 
 // Create the time series sequence for lag 1 
-gen SP500_lag = l.SP500
+generate SP500_lag = l.SP500
 
 // Create Actural Return time series
-gen return_SP500 = ( SP500 - SP500_lag) / ( SP500_lag)
+generate return_SP500 = ( SP500 - SP500_lag) / ( SP500_lag)
 
 // Plot time return series
 twoway (line return_SP500 t)
