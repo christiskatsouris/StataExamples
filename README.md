@@ -2,7 +2,7 @@
 
 In this teaching page we provide some useful examples for implementation in Stata depending on the application of interest. 
 
-### [A]. Introduction to Econometrics 
+## [A]. Introduction to Econometrics 
 
 We begin by considering a small simulation study for the parameter of a linear regression model below
 
@@ -37,7 +37,7 @@ simulate beta=r(beta) se=r(se), reps(100): mcexample
 
 ```
 
-### [B]. Applied Time Series Econometrics
+## [B]. Applied Time Series Econometrics
 
 ```Stata
 
@@ -69,7 +69,7 @@ twoway (line return_SP500 t), title (Time Series Plot - Actual Returns of S&P500
 
 ```
 
-## Example: Arch and Garch modelling in Stata
+### Example: Arch and Garch modelling in Stata
 
 ```Stata
 
@@ -118,4 +118,4 @@ mgarch vcc (r_DJIA r_SP500 r_Nasdaq = L.r_DJIA L.r_SP500 L.r_Nasdaq), arch(1) ga
 
 ```
 
-### [C]. Resampling Techniques
+## [C]. Resampling Techniques
