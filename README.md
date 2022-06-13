@@ -92,7 +92,7 @@ permtest y, treat(D) np(`np') ipwcovars1(W)
 
 Consider the following econometric specification which tests the electoral competition hypothesis
 
-$$y_{it} = \delta_1 ( CPA_t . D_i) + \delta_2 (Z_{it} . CPA_t) + \delta_3 (CPA_t . D_i . Z_{it}) + \beta^{\prime} X_{it} + \eta_{t} + u_{i} + \epsilon_{it}, \ \ \  \text{for} \ i = 1,...,N \ \text{and} \ t = 1,...,n.$$
+$$y_{it} = \delta_1 ( CPA_t . D_i) + \delta_2 (Z_{it} . CPA_t) + \delta_3 (CPA_t . D_i . Z_{it}) + \beta^{\prime} X_{it} + \eta_{t} + u_{i} + \epsilon_{it}, \ \ \  \text{for} \ \ i = 1,...,N \ \ \text{and} \ \ t = 1,...,n.$$
 
 where y_it = ( T_it, Q_it, e_it ) and Z_it is a given variable in the dataset which measures the level of electoral competition for each council, during each time period. 
 
@@ -101,7 +101,7 @@ where y_it = ( T_it, Q_it, e_it ) and Z_it is a given variable in the dataset wh
 // STEP 1: CONSTRUCTION OF VARIABLES
 
 // Generating the aggregate indicator for the quality dependent variable Q
-gen aggexp = (socialexprp + eduexprp + environexprp + corporatexprp)
+generate aggexp = (socialexprp + eduexprp + environexprp + corporatexprp)
 
 // Sorting the data by area code i.e., 1,...,172
 sort code
