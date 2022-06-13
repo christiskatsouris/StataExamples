@@ -39,6 +39,12 @@ simulate beta=r(beta) se=r(se), reps(100): mcexample
 
 ## [B]. Applied Time Series Econometrics
 
+In Applied Time Series Econometrics applications before fitting time series models to stock prices we need to estimate the corresponding stock returns which transform the data into stationary sequences in the convetional sence. To do this, we need to apply the rule below 
+
+$$R_t = \frac{ P_{t+1} - P_t }{ P_t }, \ \ \ \text{for} \ t = 1,...,n$$,
+
+where n is the sample size of the time series under examination. 
+
 ```Stata
 
 // Time series time is set as the increasing number of observations
