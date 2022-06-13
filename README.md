@@ -155,6 +155,7 @@ generate X2 = (rand>0.7) + 1
 generate e = rnormal(0,1)
 generate y = 0.8*d + 0.20*X1 + 0.05*X2 + e
 
+// The statistical validity of the treatment estimator can be assessed using a permuation test techique
 permtest y, treat(D) np(`np') ipwcovars1(W)
 
 ```
