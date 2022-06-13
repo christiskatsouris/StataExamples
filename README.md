@@ -20,11 +20,11 @@ program define mcexample, rclass
 drop _all
 
 set obs 50
-gen e = rnormal(0,1)
-gen x = rnormal(0,1)
+generate e = rnormal(0,1)
+generate x = rnormal(0,1)
 
-gen y = beta*x + e
-reg y x 
+generate y = beta*x + e
+regress y x 
 
 return scalar beta  = _b[x]
 return scalar se = _se[x]
@@ -114,14 +114,15 @@ by code: egen avgenvironexprp = mean(environexprp)
 by code: egen avgcorporatexprp = mean(corporatexprp)
 
 // Compute the weights for each of the indicator as relative expenditures
-gen w_bvpi38 = avgeduexprp / avgaggexp
-gen w_bvpi54 = avgsocialexprp / avgaggexp
-gen w_bvpi82a = avgenvironexprp / avgaggexp
-gen w_bvpi8 = avgcorporatexprp / avgaggexp
-gen aggout = (bvpi38*w_bvpi38)+(bvpi54*w_bvpi54)+(bvpi82a*w_bvpi82a)+(bvpi8*w_bvpi8)
-gen aggout_noedu = (bvpi54*w_bvpi54)+(bvpi82a*w_bvpi82a)+(bvpi8*w_bvpi8)
+generate w_bvpi38 = avgeduexprp / avgaggexp
+generate w_bvpi54 = avgsocialexprp / avgaggexp
+generate w_bvpi82a = avgenvironexprp / avgaggexp
+generate w_bvpi8 = avgcorporatexprp / avgaggexp
+generate aggout = (bvpi38*w_bvpi38)+(bvpi54*w_bvpi54)+(bvpi82a*w_bvpi82a)+(bvpi8*w_bvpi8)
+generate aggout_noedu = (bvpi54*w_bvpi54)+(bvpi82a*w_bvpi82a)+(bvpi8*w_bvpi8)
 
 // STEP 2: FIX THE PANEL DATA STRUCTURE 
+
 // Sort the panel by increasing order via code and year 
 sort code year
 iis code
@@ -129,7 +130,7 @@ tis year
 xtdes, i(code) t(year)
 tsset code year
 
-// PANEL DATA ESTIMATIONS
+// STEP 3: PANEL DATA ESTIMATIONS
 
 // The following code implements a Panel Data Model with clustered robust standard errors
 xi: xtreg taxreqrp england dummyCPAengland i.year lgrantrp ... lselfemployed, fe cluster(code)
