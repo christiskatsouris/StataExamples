@@ -128,7 +128,7 @@ mgarch vcc (r_DJIA r_SP500 r_Nasdaq = L.r_DJIA L.r_SP500 L.r_Nasdaq), arch(1) ga
 
 Consider the Treatment Effect Linear Regression Model (TELRM), with no covariates given by
 
-$$y_i = \gamma D_i + \epsilon_i, \ \ \ \text{for} \ i = 1,...,n,$$
+$$y_i = \gamma D_i + e_i, \ \ \ \text{for} \ i = 1,...,n,$$
 
 where y represents a health outcome for the i-th survey participant and D is a binary variable which indicates the participation to a RCT study. We are particularly interested to assess the finite-sample validity of the treatment estimator. 
 
