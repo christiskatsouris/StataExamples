@@ -130,4 +130,15 @@ Consider the Treatment Effect Linear Regression Model (TELRM), with no covariate
 
 $$y_i = \gamma D_i + \epsilon_i, \ \ \ \text{for} \ i = 1,...,n,$$
 
-where y represents a health outcome for the i-th survey participant and D is a binary variable which indicates the participation to a RCT study. 
+where y represents a health outcome for the i-th survey participant and D is a binary variable which indicates the participation to a RCT study. We are particularly interested to assess the finite-sample validity of the treatment estimator. 
+
+First we simulate a data generating process for the TELR model using the following code
+
+```Stata
+
+set obs 25
+generate d = (rnormal(0,1)<0)
+generate e = rnormal(0,1)
+generate y = 0.8*d + e
+
+```
