@@ -2,7 +2,9 @@
 
 In this teaching page we provide some useful examples for implementation in Stata depending on the application of interest. 
 
-## [A]. Introduction to Econometrics: Simple Linear Regression 
+## [A]. Introduction to Econometrics 
+
+### Example 1: Simple Linear Regression 
 
 We begin by considering a small simulation study for the parameter of a linear regression model below
 
@@ -37,7 +39,9 @@ simulate beta=r(beta) se=r(se), reps(100): mcexample
 
 ```
 
-## [B]. Applied Econometrics: Resampling Techniques
+## [B]. Applied Econometrics
+
+### Application B1: Resampling Techniques
 
 Consider the Treatment Effect Linear Regression Model (TELRM), with no covariates given by
 
@@ -84,6 +88,11 @@ permtest y, treat(D) np(`np') ipwcovars1(W)
 
 - Romano, J. P., & Wolf, M. (2016). Efficient computation of adjusted p-values for resampling-based stepdown multiple testing. Statistics & Probability Letters, 113, 38-40.
 
+### Application B2: Panel Data Estimation in Stata
+
+Consider the following econometric specification which tests the electoral competition hypothesis
+
+$$Y_{it} = \delta_1 \ (CPA_t \ . \ D_i) + \delta_2 \ (Z_{it} \ . \ CPA_t) + \delta_3 \ (CPA_t \ .\  D_i \ . Z_{it}) + \beta^{T} \mathbf{X}_{it} + \eta_{t} + u_{i} + \epsilon_{it}$$
 
 ## [C]. Applied Time Series Econometrics
 
@@ -123,7 +132,7 @@ twoway (line return_SP500 t), title (Time Series Plot - Actual Returns of S&P500
 
 ```
 
-### Example: Arch and Garch modelling in Stata
+### Application C1: Fitting Arch and Garch models in Stata
 
 ```Stata
 
