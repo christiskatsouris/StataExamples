@@ -46,6 +46,11 @@ Consider the first-order autoregressive time series model below
 
 $$ y_i = \beta y_{i-1} + u_i, \ \ \ \text{for} \ \ i = 1,...,n.$$
 
+Suppose that ui is an i.i.d sequence of random variables that have a N(0,1) distribution. Write a short programme in Stata for a simulation study using the following parameters
+
+$$n = 200, \ \ \beta = { 0.5, 0.7, 0.0 } \ \ \ \text{and} \ \ B = 500.$$
+
+
 ```Stata
 
 set seed 1234
@@ -58,7 +63,7 @@ set obs 100
 generate u = rnormal(0,1)
 
 generate y = 0 in 1 
-forvalues j = 2/100{
+forvalues j = 2/200{
 replace y = 0.5*y[_n-1]+u in `j'
 }
 
@@ -71,7 +76,7 @@ end
 // end of Stata program
 
 // Now we can run our Stata program using the build-in Stata function "simulate"
-// Each sample is of size n = 100, while we repeat the above for B = 500 times
+// Each sample is of size n = 200, while we repeat the above for B = 500 times
 
 simulate b= r(b) se= r(se) t= r(t) , reps(500) : myprog
 
