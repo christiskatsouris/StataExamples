@@ -36,6 +36,44 @@ end
 // Each sample is of size n = 50, while we repeat the above for B = 100 times
 
 simulate beta=r(beta) se=r(se), reps(100): mcexample
+count if (t < - 1.96) | (t > 1.96)
+
+```
+
+### Example 2: First Order Autoregressive Regression 
+
+Consider the first-order autoregressive time series model below
+
+$$ y_i = \beta y_{i-1} + u_i, \ \ \ \text{for} \ \ i = 1,...,n.$$
+
+```Stata
+
+set seed 1234
+
+program define myprog, rclass
+// begin of Stata program
+
+drop _all
+set obs 100
+generate u = rnormal(0,1)
+
+generate y = 0 in 1 
+forvalues j = 2/100{
+replace y = 0.5*y[_n-1]+u in `j'
+}
+
+generate y_1=y[_n-1]
+reg y y_1 , nocon
+return scalar b  = _b[y_1]
+return scalar se = _se[y_1]
+return scalar t  = _b[y_1]/_se[y_1]
+end
+// end of Stata program
+
+// Now we can run our Stata program using the build-in Stata function "simulate"
+// Each sample is of size n = 100, while we repeat the above for B = 500 times
+
+simulate b= r(b) se= r(se) t= r(t) , reps(500) : myprog
 
 ```
 
