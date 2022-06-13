@@ -92,7 +92,54 @@ permtest y, treat(D) np(`np') ipwcovars1(W)
 
 Consider the following econometric specification which tests the electoral competition hypothesis
 
-$$y_{it} = \delta_1 ( CPA_t . D_i) + \delta_2 (Z_{it} . CPA_t) + \delta_3 (CPA_t . D_i . Z_{it}) + \beta^{\prime} X_{it} + \eta_{t} + u_{i} + \epsilon_{it}.$$
+$$y_{it} = \delta_1 ( CPA_t . D_i) + \delta_2 (Z_{it} . CPA_t) + \delta_3 (CPA_t . D_i . Z_{it}) + \beta^{\prime} X_{it} + \eta_{t} + u_{i} + \epsilon_{it}, \ \ \  text{for} \ i = 1,...,N \ \text{and} \ t = 1,...,n.$$
+
+where y_it = ( T_it, Q_it, e_it ) and Z_it is a given variable in the dataset which measures the level of electoral competition for each council, during each time period. 
+
+```Stata
+
+// STEP 1: CONSTRUCTION OF VARIABLES
+
+// Generating the aggregate indicator for the quality dependent variable Q
+gen aggexp = (socialexprp + eduexprp + environexprp + corporatexprp)
+
+// Sorting the data by area code i.e., 1,...,172
+sort code
+
+// Compute the time average of indicators for each council 
+by code: egen avgaggexp = mean(aggexp)
+by code: egen avgsocialexprp = mean(socialexprp)
+by code: egen avgeduexprp = mean(eduexprp)
+by code: egen avgenvironexprp = mean(environexprp)
+by code: egen avgcorporatexprp = mean(corporatexprp)
+
+// Compute the weights for each of the indicator as relative expenditures
+gen w_bvpi38 = avgeduexprp / avgaggexp
+gen w_bvpi54 = avgsocialexprp / avgaggexp
+gen w_bvpi82a = avgenvironexprp / avgaggexp
+gen w_bvpi8 = avgcorporatexprp / avgaggexp
+gen aggout = (bvpi38*w_bvpi38)+(bvpi54*w_bvpi54)+(bvpi82a*w_bvpi82a)+(bvpi8*w_bvpi8)
+gen aggout_noedu = (bvpi54*w_bvpi54)+(bvpi82a*w_bvpi82a)+(bvpi8*w_bvpi8)
+
+// STEP 2: FIX THE PANEL DATA STRUCTURE 
+// Sort the panel by increasing order via code and year 
+sort code year
+iis code
+tis year
+xtdes, i(code) t(year)
+tsset code year
+
+// PANEL DATA ESTIMATIONS
+
+// The following code implements a Panel Data Model with clustered robust standard errors
+xi: xtreg taxreqrp england dummyCPAengland i.year lgrantrp ... lselfemployed, fe cluster(code)
+
+```
+
+### References
+
+Lockwood, B., & Porcelli, F. (2013). Incentive schemes for local government: Theory and evidence from comprehensive performance assessment in england. American Economic Journal: Economic Policy, 5(3), 254-86.
+
 
 ## [C]. Applied Time Series Econometrics
 
