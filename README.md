@@ -144,7 +144,7 @@ regress y d
 
 ```
 
-Second consider the TELRM under the experimental condition of covariate implanace 
+Second consider the TELRM under the experimental condition of covariates imbalance 
 
 ```Stata
 
