@@ -72,6 +72,10 @@ generate y = 0.8*d + 0.20*X1 + 0.05*X2 + e
 permtest y, treat(D) np(`np') ipwcovars1(W)
 
 ```
+### Remarks
+
+'permtest' is a build-in function in Stata that implements a permutation test as a statistical siginificance technique to validate the treatment effect estimator. The ado file for the particular command can be found in the Github page of [permtest](https://github.com/masongcm/permtest). 
+
 ### References
 
 - Freedman, D., & Lane, D. (1983). A nonstochastic interpretation of reported significance levels. Journal of Business & Economic Statistics, 1(4), 292-298.
