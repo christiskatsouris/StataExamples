@@ -45,7 +45,7 @@ $$R_t = \frac{ P_{t+1} - P_t }{ P_t }, \ \ \ \text{for} \ t = 1,...,n,$$
 
 where n is the sample size of the time series under examination. 
 
-![log returns](log_returns.png)
+![log_returns](data/log_returns.png)
 
 ```Stata
 
