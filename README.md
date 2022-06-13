@@ -92,7 +92,7 @@ permtest y, treat(D) np(`np') ipwcovars1(W)
 
 Consider the following econometric specification which tests the electoral competition hypothesis
 
-$$Y_{it} = \delta_1 \ (CPA_t \ . \ D_i) + \delta_2 \ (Z_{it} \ . \ CPA_t) + \delta_3 \ (CPA_t \ .\  D_i \ . Z_{it}) + \beta^{T} \mathbf{X}_{it} + \eta_{t} + u_{i} + \epsilon_{it}$$
+$$y_{it} = \delta_1 ( CPA_t . D_i) + \delta_2 (Z_{it} . CPA_t) + \delta_3 (CPA_t . D_i . Z_{it}) + \beta^{\prime} X_{it} + \eta_{t} + u_{i} + \epsilon_{it}.$$
 
 ## [C]. Applied Time Series Econometrics
 
