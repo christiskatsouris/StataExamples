@@ -140,6 +140,22 @@ set obs 25
 generate d = (rnormal(0,1)<0)
 generate e = rnormal(0,1)
 generate y = 0.8*d + e
+regress y d
+
+```
+
+Second consider the TELRM under the experimental condition of covariate implanace 
+
+```Stata
+
+generate d = (rnormal(0,1)<0)
+generate X1 = rnormal(0,2)
+generate rand = runiform()
+generate X2 = (rand>0.7) + 1
+generate e = rnormal(0,1)
+generate y = 0.8*d + 0.20*X1 + 0.05*X2 + e
+
+permtest y, treat(D) np(`np') ipwcovars1(W)
 
 ```
 
