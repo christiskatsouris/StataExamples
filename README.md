@@ -2,7 +2,7 @@
 
 In this teaching page we provide some useful examples for implementation in Stata depending on the application of interest. 
 
-## [A]. Introduction to Econometrics 
+## [A]. Introduction to Econometrics: Simple Linear Regression 
 
 We begin by considering a small simulation study for the parameter of a linear regression model below
 
@@ -37,7 +37,51 @@ simulate beta=r(beta) se=r(se), reps(100): mcexample
 
 ```
 
-## [B]. Applied Time Series Econometrics
+## [B]. Applied Econometrics: Resampling Techniques
+
+Consider the Treatment Effect Linear Regression Model (TELRM), with no covariates given by
+
+$$y_i = \gamma D_i + e_i, \ \ \ \text{for} \ i = 1,...,n,$$
+
+where y represents a health outcome for the i-th survey participant and D is a binary variable which indicates the participation to a RCT study. We are particularly interested to assess the finite-sample validity of the treatment estimator. 
+
+First we simulate a data generating process for the TELR model using the following code
+
+```Stata
+
+set obs 25
+generate d = (rnormal(0,1)<0)
+generate e = rnormal(0,1)
+generate y = 0.8*d + e
+regress y d
+
+```
+
+Second consider the TELRM under the experimental condition of covariates imbalance 
+
+```Stata
+
+generate d = (rnormal(0,1)<0)
+generate X1 = rnormal(0,2)
+generate rand = runiform()
+generate X2 = (rand>0.7) + 1
+generate e = rnormal(0,1)
+generate y = 0.8*d + 0.20*X1 + 0.05*X2 + e
+
+// The statistical validity of the treatment estimator can be assessed using a permuation test techique
+permtest y, treat(D) np(`np') ipwcovars1(W)
+
+```
+### References
+
+- Freedman, D., & Lane, D. (1983). A nonstochastic interpretation of reported significance levels. Journal of Business & Economic Statistics, 1(4), 292-298.
+
+- Katsouris, C. (2021). Treatment effect validation via a permutation test in Stata. arXiv preprint [arXiv:2110.12268](https://arxiv.org/abs/2110.12268).
+
+- Romano, J. P., & Wolf, M. (2016). Efficient computation of adjusted p-values for resampling-based stepdown multiple testing. Statistics & Probability Letters, 113, 38-40.
+
+
+## [C]. Applied Time Series Econometrics
 
 In Applied Time Series Econometrics applications before fitting time series models to stock prices we need to estimate the corresponding stock returns which transform the data into stationary sequences in the convetional sence. To do this, we need to apply the rule below 
 
@@ -123,47 +167,3 @@ mgarch dcc (r_DJIA r_SP500 r_Nasdaq = L.r_DJIA L.r_SP500 L.r_Nasdaq), arch(1) ga
 mgarch vcc (r_DJIA r_SP500 r_Nasdaq = L.r_DJIA L.r_SP500 L.r_Nasdaq), arch(1) garch(1) nolog vsquish
 
 ```
-
-## [C]. Resampling Techniques
-
-Consider the Treatment Effect Linear Regression Model (TELRM), with no covariates given by
-
-$$y_i = \gamma D_i + e_i, \ \ \ \text{for} \ i = 1,...,n,$$
-
-where y represents a health outcome for the i-th survey participant and D is a binary variable which indicates the participation to a RCT study. We are particularly interested to assess the finite-sample validity of the treatment estimator. 
-
-First we simulate a data generating process for the TELR model using the following code
-
-```Stata
-
-set obs 25
-generate d = (rnormal(0,1)<0)
-generate e = rnormal(0,1)
-generate y = 0.8*d + e
-regress y d
-
-```
-
-Second consider the TELRM under the experimental condition of covariates imbalance 
-
-```Stata
-
-generate d = (rnormal(0,1)<0)
-generate X1 = rnormal(0,2)
-generate rand = runiform()
-generate X2 = (rand>0.7) + 1
-generate e = rnormal(0,1)
-generate y = 0.8*d + 0.20*X1 + 0.05*X2 + e
-
-// The statistical validity of the treatment estimator can be assessed using a permuation test techique
-permtest y, treat(D) np(`np') ipwcovars1(W)
-
-```
-
-### References
-
-- Freedman, D., & Lane, D. (1983). A nonstochastic interpretation of reported significance levels. Journal of Business & Economic Statistics, 1(4), 292-298.
-
-- Katsouris, C. (2021). Treatment effect validation via a permutation test in Stata. arXiv preprint [arXiv:2110.12268](https://arxiv.org/abs/2110.12268).
-
-- Romano, J. P., & Wolf, M. (2016). Efficient computation of adjusted p-values for resampling-based stepdown multiple testing. Statistics & Probability Letters, 113, 38-40.
