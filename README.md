@@ -10,6 +10,10 @@ We begin by considering a small simulation study for the parameter of a linear r
 
 $$ y_i = \beta x_i + e_i, \ \ \ \text{for} \ \ i = 1,...,n.$$
 
+Suppose that ei is an i.i.d sequence of random variables that have a N(0,1) distribution. Write a short programme in Stata for a simulation study using the following parameters
+
+$$n = 50, \ \ \beta = ( 0.5, 0.7, 0.9 ) \ \ \ \text{and} \ \ B = 500.$$
+
 ```Stata
 
 set seed 1234
@@ -33,9 +37,9 @@ end
 // end of Stata program
 
 // Now we can run our Stata program using the build-in Stata function "simulate"
-// Each sample is of size n = 50, while we repeat the above for B = 100 times
+// Each sample is of size n = 50, while we repeat the above for B = 500 times
 
-simulate beta=r(beta) se=r(se), reps(100): mcexample
+simulate beta=r(beta) se=r(se), reps(500): mcexample
 count if (t < - 1.96) | (t > 1.96)
 
 ```
@@ -119,6 +123,34 @@ generate y = 0.8*d + 0.20*X1 + 0.05*X2 + e
 permtest y, treat(D) np(`np') ipwcovars1(W)
 
 ```
+
+Next consider a small simulation study to assess the validity of the treatment effect estimator for the TERLM with no covariates and Cauchy errors.
+
+```Stata
+
+cap program drop mcexample
+
+program define mcexample, rclass
+args gamma N
+drop _all
+set obs `N'
+gen d = (rnormal(0,1)<0)
+gen e = rcauchy(1,0.25)
+gen y = `gamma'*d + e
+
+permtest y, treat(d) np(1000)
+mat MATmatrix1 = r(pval_asym1s)
+mat MATmatrix2 = r(pval_perm)
+return scalar pvalue1 = MATmatrix1[1,1]
+return scalar pvalue2 = MATmatrix2[1,1]
+end
+
+simulate pvalue1=r(pvalue1) pvalue2=r(pvalue2), reps(1000) : mcexample 0.05 20
+count if (pvalue1<=0.05)
+count if (pvalue2<=0.05)
+
+```
+
 ### Remarks
 
 'permtest' is a build-in function in Stata that implements a permutation test as a statistical siginificance technique to validate the treatment effect estimator. The ado file for the particular command can be found in the Github page of [permtest](https://github.com/masongcm/permtest). 
