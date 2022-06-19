@@ -44,6 +44,11 @@ count if (t < - 1.96) | (t > 1.96)
 
 ```
 
+#### Remarks:
+
+1. A small simulation study allows us to calcuate the empirical size and empirical power of a test statistic (such as the t-test for a coefficient of the linear regression). In general, the significance level (alpha) of a test or size of the test is given by alpha = P(Type I Error), that is, the probability of doing a Type I Error i.e., a = P(reject H_0 when H_0 is true). Therefore, specifically when using the t-test as a test function to assess the statistical significance of the slope coefficient of the SLR, we basically test the following hypotheses: H0: beta = 0 versus H1: beta not equal to zero (for a two-sided test). Thus, in order for the covariate x to be a statistical significant predictor for the dependent variable y we aim to find statistical evidence that allow us to reject the null hypothesis.
+
+
 ### Example 2: First Order Autoregressive Regression 
 
 Consider the first-order autoregressive time series model below
