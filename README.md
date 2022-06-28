@@ -2,9 +2,9 @@
 
 In this teaching page we provide some useful examples for implementation in Stata depending on the application of interest. 
 
-## [A]. Introduction to Econometrics 
+# [A]. Introduction to Econometrics 
 
-### Example 1: Simple Linear Regression 
+## Example 1: Simple Linear Regression 
 
 We begin by considering a small simulation study for the parameter of a linear regression model below
 
@@ -44,7 +44,7 @@ count if (t < - 1.96) | (t > 1.96)
 
 ```
 
-#### Remarks:
+### Remarks:
 
 1. A small simulation study allows us to calcuate the empirical size and empirical power of a test statistic (such as the t-test for a coefficient of the linear regression). In general, the significance level (alpha) of a test or size of the test is given by alpha = P(Type I Error), that is, the probability of doing a Type I Error i.e., a = P(reject H_0 when H_0 is true). Therefore, specifically when using the t-test as a test function to assess the statistical significance of the slope coefficient of the SLR, we basically test the following hypotheses: H0: beta = 0 versus H1: beta not equal to zero (for a two-sided test). Thus, in order for the covariate x to be a statistical significant predictor for the dependent variable y we aim to find statistical evidence that allow us to reject the null hypothesis.
 
@@ -53,7 +53,7 @@ count if (t < - 1.96) | (t > 1.96)
 3. Therefore, the Monte Carlo simulation step requires to obtain an estimate of the t-test (e.g., t = beta_hat / s.e(beta_hat) ) in each replication. Then, the given value of the t-test which is considered to be a realization of the corresponding asymptotic distribution can be used to decide whether to accept or reject the null hypothesis, by appropriately (depending on the type of the test) comparing with the associated critical value or estimating the corresponding p-value. Finally, if the replication step is B = 100, then based on a significance level alpha = 5%, we should obtain the frequency of non-rejections of the null hypothesis to be close to the nominal size, which is the probability of a Type I Error to occur. 
 
 
-### Example 2: First Order Autoregressive Regression 
+## Example 2: First Order Autoregressive Regression 
 
 Consider the first-order autoregressive time series model below
 
@@ -95,9 +95,9 @@ simulate b= r(b) se= r(se) t= r(t) , reps(500) : myprog
 
 ```
 
-## [B]. Applied Econometrics
+# [B]. Applied Econometrics
 
-### Application B1: Resampling Techniques
+## Application B1: Resampling Techniques
 
 Consider the Treatment Effect Linear Regression Model (TELRM), with no covariates given by
 
@@ -172,7 +172,7 @@ count if (pvalue2<=0.05)
 
 - Romano, J. P., & Wolf, M. (2016). Efficient computation of adjusted p-values for resampling-based stepdown multiple testing. Statistics & Probability Letters, 113, 38-40.
 
-### Application B2: Panel Data Estimation in Stata
+## Application B2: Panel Data Estimation in Stata
 
 Consider the following econometric specification which tests the electoral competition hypothesis
 
@@ -236,7 +236,7 @@ Based on one of the following studies, prepare a short replication study. Give e
 [3] Miguel, E., & Kremer, M. (2004). Worms: identifying impacts on education and health in the presence of treatment externalities. Econometrica, 72(1), 159-217.
 
 
-## [C]. Applied Time Series Econometrics
+# [C]. Applied Time Series Econometrics
 
 In Applied Time Series Econometrics applications before fitting time series models to stock prices we need to estimate the corresponding stock returns which transform the data into stationary sequences in the convetional sence. To do this, we need to apply the rule below 
 
@@ -274,7 +274,7 @@ twoway (line return_SP500 t), title (Time Series Plot - Actual Returns of S&P500
 
 ```
 
-### Application C1: Fitting Arch and Garch models in Stata
+## Application C1: Fitting Arch and Garch models in Stata
 
 ```Stata
 
