@@ -101,7 +101,7 @@ simulate b= r(b) se= r(se) t= r(t) , reps(500) : myprog
 
 Consider the Treatment Effect Linear Regression Model (TELRM), with no covariates given by
 
-$$y_i = \gamma D_i + e_i, \ \ \ \text{for} \ i = 1,...,n,$$
+$$y_i = \gamma D_i + e_i, \ \ \ \text{for} \ \ i = 1,...,n,$$
 
 where y represents a health outcome for the i-th survey participant and D is a binary variable which indicates the participation to a RCT study. We are particularly interested to assess the finite-sample validity of the treatment estimator. 
 
@@ -224,6 +224,16 @@ xi: xtreg taxreqrp england dummyCPAengland i.year lgrantrp ... lselfemployed, fe
 ### References
 
 Lockwood, B., & Porcelli, F. (2013). Incentive schemes for local government: Theory and evidence from comprehensive performance assessment in england. American Economic Journal: Economic Policy, 5(3), 254-86.
+
+### Task 1
+
+Based on one of the following studies, prepare a short replication study. Give emphasis on the data structure in each case, the econometric specification as well as suitable robustness checks that allow to examine the economic theory under investigation.    
+
+[1] Egger, P., & Koethenbuerger, M. (2010). Government spending and legislative organization: Quasi-experimental evidence from Germany. American Economic Journal: Applied Economics, 2(4), 200-212.
+
+[2] Gilchrist, D. S. (2016). Patents as a spur to subsequent innovation? Evidence from pharmaceuticals. American Economic Journal: Applied Economics, 8(4), 189-221.
+
+[3] Miguel, E., & Kremer, M. (2004). Worms: identifying impacts on education and health in the presence of treatment externalities. Econometrica, 72(1), 159-217.
 
 
 ## [C]. Applied Time Series Econometrics
