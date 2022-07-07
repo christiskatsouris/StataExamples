@@ -13,7 +13,7 @@ In this teaching page we provide some useful examples for implementation in Stat
 // We can create a new categorical variable
 // The categorical variable xcat takes the values 1, 2 and 3 as defined below 
 
-generate xcat = 2
+generate xcat  = 2
 replace  xcat  = 1 if ( x < 200 )
 replace  xcat  = 3 if ( x > 500 )
 
