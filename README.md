@@ -113,17 +113,22 @@ wage = b0 + b1 * female + b2 * educ + u
 ```Stata
 
 // Consider the Crime dataset in Stata
+// In particular we are interested to study the effect of Medical Marijuana Laws on Crime
+
 egen Murder_crime_ave = mean( Murder_crime),by(Year)
 egen Violent_crime_ave = mean( Violent_crime),by(Year) 
 
 ```
+
+### References
+
+- Morris, R. G., TenEyck, M., Barnes, J. C., & Kovandzic, T. V. (2014). The effect of medical marijuana laws on crime: evidence from state panel data, 1990-2006. PloS one, 9(3), e92816.
 
 ## Further Reading 
 
 - Δριτσάκη, Χ. Ν., & Δριτσάκη, Μ. Ν. (2013). Εισαγωγή στην Οικονομετρία με τη χρήση του λογισμικού EVIEWS. Εκδόσεις Κλειδάριθμος.
 - Stock, J. H., & Watson, M. W. (2015). Introduction to econometrics 3rd ed.
 - Wooldridge, J. M. (2015). Introductory econometrics: A modern approach. Cengage learning.
-
 
 
 # [B]. Applied Econometrics
