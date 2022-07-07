@@ -116,7 +116,8 @@ regress l_wage educ
 // Consider the reduced form equation such that 
 // educ = a0 + a1 * sibs + a2 * brthord + v
 
-// Notice that we need that a2 to be different than zero so that the parameter beta in the structural econometric model to be identified. Thus, we need to check whether the identification assumption holds by checking the t-test under the null hypothesis, H0: a2 = 0.
+// Notice that we need that a2 to be different than zero so that the parameter beta in the structural econometric model to be identified. 
+// Thus, we need to check whether the identification assumption holds by checking the t-test under the null hypothesis, H0: a2 = 0.
 
 regress educ sibs brthord
 
