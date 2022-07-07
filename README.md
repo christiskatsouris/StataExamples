@@ -39,7 +39,6 @@ correlate y x
 // Obtain a regression model for y on x
 regress y x
 
-
 //----------------------------------------------------
 // Simple Random Sampling from a Finite Population
 //----------------------------------------------------
