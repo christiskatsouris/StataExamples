@@ -213,9 +213,11 @@ egen Violent_crime_ave = mean( Violent_crime),by(Year)
 
 ## Further Reading 
 
+- Stock, J. & Watson, M. (2016). Introduction to econometrics. London: Addison-Wesley.
+- Wooldridge, J.M. (2020). Introductory econometrics: A modern approach (7th ed.).
+
+Greek Bibliography
 - Δριτσάκη, Χ. Ν., & Δριτσάκη, Μ. Ν. (2013). Εισαγωγή στην Οικονομετρία με τη χρήση του λογισμικού EVIEWS. Εκδόσεις Κλειδάριθμος.
-- Stock, J. H., & Watson, M. W. (2015). Introduction to econometrics 3rd ed.
-- Wooldridge, J. M. (2015). Introductory econometrics: A modern approach. Cengage learning.
 
 
 # [B]. Applied Econometrics
