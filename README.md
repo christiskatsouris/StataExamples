@@ -30,6 +30,34 @@ table xcat, contents (n y mean y sum y sd y) row
 // We can ontain a summary statistics table for xcat which corresponds to y only
 table xcat, contents (n x mean x sum x sd x) row
 
+// Creating Graphs
+graph twoway scatter y x
+
+// Obtain the correlation coefficient between y and x
+correlate y x
+
+// Obtain a regression model for y on x
+regress y x
+
+
+//----------------------------------------------------
+// Simple Random Sampling from a Finite Population
+//----------------------------------------------------
+
+// Step 1: Obtain a Simple Random Sample of size n = 32 from the population of hospitals, N = 393 
+sample 32, count
+
+// Step 2:  Specifying the sample design
+generate n = 32
+generate N = 393
+generate sampfrac = n/N
+generate weight   = N/n
+svyset [pweight = weight], fpc(sampfrac)
+
+// Creating Estimates of Population Quantities
+svy: total y
+
+
 ```
 
 ## Example 1: Simple Linear Regression 
