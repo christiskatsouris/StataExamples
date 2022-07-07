@@ -95,8 +95,17 @@ simulate b= r(b) se= r(se) t= r(t) , reps(500) : myprog
 
 ```
 
-Data Applications of the multiple regression model in Stata can be found in the Wooldridge (2015).  
+Data Applications of the multiple regression model in Stata can be found in the Wooldridge (2015). We present some key applications for the purpose of illustration.  
 
+## Example 3: Multiple Regression Analysis 
+
+```Stata
+
+// Consider the linear regression model with multiple regressors
+wage = b0 + b1 * female + b2 * educ + u
+
+
+```
 
 ## References
 
