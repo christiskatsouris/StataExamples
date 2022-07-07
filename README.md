@@ -447,3 +447,15 @@ mgarch dcc (r_DJIA r_SP500 r_Nasdaq = L.r_DJIA L.r_SP500 L.r_Nasdaq), arch(1) ga
 mgarch vcc (r_DJIA r_SP500 r_Nasdaq = L.r_DJIA L.r_SP500 L.r_Nasdaq), arch(1) garch(1) nolog vsquish
 
 ```
+
+An alternative Statistical/Econometrics Software to R, Matlab and Stata is Eviews which provides an easy way for econometric analysis of time series data. 
+
+```Stata
+
+// Time series regression models 
+// Fitting an AR(1) regression model with an intercept 
+
+equation eq1.ls(cov=hac) series02 c series02(-1) 
+
+
+```
