@@ -178,9 +178,7 @@ count if (pvalue2<=0.05)
 ### References
 
 - Freedman, D., & Lane, D. (1983). A nonstochastic interpretation of reported significance levels. Journal of Business & Economic Statistics, 1(4), 292-298.
-
 - Katsouris, C. (2021). Treatment effect validation via a permutation test in Stata. arXiv preprint [arXiv:2110.12268](https://arxiv.org/abs/2110.12268).
-
 - Romano, J. P., & Wolf, M. (2016). Efficient computation of adjusted p-values for resampling-based stepdown multiple testing. Statistics & Probability Letters, 113, 38-40.
 
 ## Application B2: Panel Data Estimation in Stata
