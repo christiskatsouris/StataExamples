@@ -99,11 +99,22 @@ Data Applications of the multiple regression model in Stata can be found in the 
 
 ## Example 3: Multiple Regression Analysis 
 
+### Application 1: Wage regression
+
 ```Stata
 
 // Consider the linear regression model with multiple regressors
 wage = b0 + b1 * female + b2 * educ + u
 
+```
+
+### Application 2: Panel Data regression 
+
+```Stata
+
+// Consider the Crime dataset in Stata
+egen Murder_crime_ave = mean( Murder_crime),by(Year)
+egen Violent_crime_ave = mean( Violent_crime),by(Year) 
 
 ```
 
