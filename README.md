@@ -39,6 +39,22 @@ correlate y x
 // Obtain a regression model for y on x
 regress y x
 
+
+//----------------------------------------------------
+// Creating a log-file in STATA to save commands
+//----------------------------------------------------
+
+log using workshop.log
+infile y x using hospital.txt, clear
+label variable y "Number of patients discharged"
+label variable x "Number of beds"
+
+sort x
+
+egen xstrat1    = cut(x), group(5)
+replace xstrat1 = xstrat1 + 1
+tab xstrat1
+
 //----------------------------------------------------
 // Simple Random Sampling from a Finite Population
 //----------------------------------------------------
