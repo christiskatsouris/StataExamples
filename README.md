@@ -457,12 +457,42 @@ An alternative Econometrics Software to R, Matlab and Stata is [Eviews](https://
 
 equation eq1.ls(cov=hac) series02 c series02(-1) 
 
-// Consider the 
-
+// Fit an AR(1) regression model with an intercept to the components of the NFCI series 
 equation eq1.ls(cov=hac) nfci c nfci(-1) 
 equation eq2.ls(cov=hac) risk c risk(-1) 
 equation eq3.ls(cov=hac) credit c credit(-1) 
 equation eq4.ls(cov=hac) leverage c leverage(-1) 
+
+// Apply standard retrospective structural break tests 
+eq1.breakls(method=glob, maxbreaks=3) nfci c nfci(-1)
+eq2.breakls(method=glob, maxbreaks=3) risk c risk(-1) 
+eq3.breakls(method=glob, maxbreaks=3) credit c credit(-1) 
+eq4.breakls(method=glob, maxbreaks=3) leverage c leverage(-1)
+
+###########################################################
+
+// Fitting a GARCH(1,1) MODEL to the NFCI series 
+
+equation eq1.arch(1,1,h) ciss c ar(1)
+equation eq2.arch(1,1,h) money c ar(1)
+equation eq3.arch(1,1,h) finance c ar(1)
+equation eq4.arch(1,1,h) bond c ar(1)
+equation eq5.arch(1,1,h) equity c ar(1)
+equation eq6.arch(1,1,h) exchange c ar(1)
+
+###########################################################
+
+// Unit Root testing 
+
+nfci.uroot(adf,trend)
+risk.uroot(adf,trend)
+credit.uroot(adf,trend)
+leverage.uroot(adf,trend)
+
+nfci.buroot(adf,trend)
+risk.buroot(adf,trend)
+credit.buroot(adf,trend)
+leverage.buroot(adf,trend)
 
 
 ```
