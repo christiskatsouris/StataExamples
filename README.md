@@ -47,8 +47,8 @@ regress y x
 sample 32, count
 
 // Step 2:  Specifying the sample design
-generate n = 32
-generate N = 393
+generate n  = 32
+generate N  = 393
 generate sampfrac = n/N
 generate weight   = N/n
 svyset [pweight = weight], fpc(sampfrac)
