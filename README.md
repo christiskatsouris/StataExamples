@@ -95,7 +95,7 @@ simulate b= r(b) se= r(se) t= r(t) , reps(500) : myprog
 
 ```
 
-### Remark:
+### Remarks:
 
 Both Example 1 and Example 2 which implement a short simulation study are very important in helping us understand the large sample properties of parameter estimates in a Simple Linear Regression model as well as in a first-order AR(1) regression model. Furthermore, many applications in classical econometric analysis require the use of multiple regression models. In particular, data applications and various examples from empirical studies based on the multiple regression model in Stata can be found in the  book of Wooldridge (2015). Here, we present some key applications for the purpose of illustration.  
 
@@ -213,7 +213,7 @@ count if (pvalue2<=0.05)
 
 ```
 
-### Remarks
+### Remarks:
 
 'permtest' is a build-in function in Stata that implements a permutation test as a statistical siginificance technique to validate the treatment effect estimator. The ado file for the particular command can be found in the Github page of [permtest](https://github.com/masongcm/permtest). 
 
