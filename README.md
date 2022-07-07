@@ -4,6 +4,34 @@ In this teaching page we provide some useful examples for implementation in Stat
 
 # [A]. Introduction to Econometrics 
 
+```Stata
+
+//----------------------------------------------------
+// Creating variables and Summary Statistics in STATA
+//----------------------------------------------------
+
+// We can create a new categorical variable
+// The categorical variable xcat takes the values 1, 2 and 3 as defined below 
+
+generate xcat = 2
+replace  xcat  = 1 if ( x < 200 )
+replace  xcat  = 3 if ( x > 500 )
+
+// Obtain Summary statistics
+summarize
+summarize, detail
+
+// Obtain a table for the categorical variable xcat
+tab xcat
+
+// We can ontain a summary statistics table for xcat which corresponds to x only
+table xcat, contents (n y mean y sum y sd y) row
+
+// We can ontain a summary statistics table for xcat which corresponds to y only
+table xcat, contents (n x mean x sum x sd x) row
+
+```
+
 ## Example 1: Simple Linear Regression 
 
 We begin by considering a small simulation study for the parameter of a linear regression model below
