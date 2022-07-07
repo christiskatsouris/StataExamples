@@ -231,6 +231,10 @@ for i =1,...,N and t = 1,...,n, where y_it = ( T_it, Q_it, e_it ) and Z_it is a 
 
 ```Stata
 
+// Datasets in Stata: 
+// To import a dataset into Stata we can use either the .xls or .txt data format.
+// Alternatively, we can use the .dta format which is already converted into the Stata data format.
+
 // STEP 1: CONSTRUCTION OF VARIABLES
 
 // Generating the aggregate indicator for the quality dependent variable Q
