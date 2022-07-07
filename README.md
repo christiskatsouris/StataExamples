@@ -301,18 +301,18 @@ generate aggexp = (socialexprp + eduexprp + environexprp + corporatexprp)
 sort code
 
 // Compute the time average of indicators for each council 
-by code: egen avgaggexp = mean(aggexp)
-by code: egen avgsocialexprp = mean(socialexprp)
-by code: egen avgeduexprp = mean(eduexprp)
-by code: egen avgenvironexprp = mean(environexprp)
+by code: egen avgaggexp        = mean(aggexp)
+by code: egen avgsocialexprp   = mean(socialexprp)
+by code: egen avgeduexprp      = mean(eduexprp)
+by code: egen avgenvironexprp  = mean(environexprp)
 by code: egen avgcorporatexprp = mean(corporatexprp)
 
 // Compute the weights for each of the indicator as relative expenditures
-generate w_bvpi38 = avgeduexprp / avgaggexp
-generate w_bvpi54 = avgsocialexprp / avgaggexp
+generate w_bvpi38  = avgeduexprp / avgaggexp
+generate w_bvpi54  = avgsocialexprp / avgaggexp
 generate w_bvpi82a = avgenvironexprp / avgaggexp
-generate w_bvpi8 = avgcorporatexprp / avgaggexp
-generate aggout = (bvpi38*w_bvpi38)+(bvpi54*w_bvpi54)+(bvpi82a*w_bvpi82a)+(bvpi8*w_bvpi8)
+generate w_bvpi8   = avgcorporatexprp / avgaggexp
+generate aggout    = (bvpi38*w_bvpi38)+(bvpi54*w_bvpi54)+(bvpi82a*w_bvpi82a)+(bvpi8*w_bvpi8)
 generate aggout_noedu = (bvpi54*w_bvpi54)+(bvpi82a*w_bvpi82a)+(bvpi8*w_bvpi8)
 
 // STEP 2: FIX THE PANEL DATA STRUCTURE 
