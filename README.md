@@ -100,8 +100,9 @@ Data Applications of the multiple regression model in Stata can be found in the 
 
 ## References
 
+- Δριτσάκη, Χ. Ν., & Δριτσάκη, Μ. Ν. (2013). Εισαγωγή στην Οικονομετρία με τη χρήση του λογισμικού EVIEWS. Εκδόσεις Κλειδάριθμος.
+- Stock, J. H., & Watson, M. W. (2015). Introduction to econometrics 3rd ed.
 - Wooldridge, J. M. (2015). Introductory econometrics: A modern approach. Cengage learning.
-
 
 
 
