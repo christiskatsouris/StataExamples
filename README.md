@@ -252,7 +252,7 @@ xi: xtreg taxreqrp england dummyCPAengland i.year lgrantrp ... lselfemployed, fe
 
 ### References
 
-Lockwood, B., & Porcelli, F. (2013). Incentive schemes for local government: Theory and evidence from comprehensive performance assessment in england. American Economic Journal: Economic Policy, 5(3), 254-86.
+- Lockwood, B., & Porcelli, F. (2013). Incentive schemes for local government: Theory and evidence from comprehensive performance assessment in england. American Economic Journal: Economic Policy, 5(3), 254-86.
 
 ## Task 1
 
