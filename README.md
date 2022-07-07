@@ -95,10 +95,10 @@ simulate b= r(b) se= r(se) t= r(t) , reps(500) : myprog
 
 ```
 
-Data Applications of the multiple regression model in Stata can be found in the Wooldridge  
+Data Applications of the multiple regression model in Stata can be found in the Wooldridge (2015).  
 
 
-### References
+## References
 
 - Wooldridge, J. M. (2015). Introductory econometrics: A modern approach. Cengage learning.
 
