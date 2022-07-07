@@ -448,7 +448,7 @@ mgarch vcc (r_DJIA r_SP500 r_Nasdaq = L.r_DJIA L.r_SP500 L.r_Nasdaq), arch(1) ga
 
 ```
 
-An alternative Econometrics Software to R, Matlab and Stata is [Eviews](https://www.eviews.com/Learning/index.html) which provides an easy way for econometric analysis of time series data. Eviews has a plethora of online tutorials which makes it easy to understand the [estimation procedure](https://www.eviews.com/Learning/timeseries_a.html) in relation to the econometric theory.  
+An alternative Econometrics Software to R, Matlab and Stata is [Eviews](https://www.eviews.com/Learning/index.html) which provides an easy way for econometric analysis of time series data. Eviews has a plethora of online tutorials which makes it easy to understand the [estimation procedure](https://www.eviews.com/Learning/timeseries_a.html) in relation to the econometric theory. An an illustrative example, below we consider the [NFCI](https://fred.stlouisfed.org/series/NFCI) series and its components. 
 
 ```Stata
 
@@ -457,7 +457,7 @@ An alternative Econometrics Software to R, Matlab and Stata is [Eviews](https://
 
 equation eq1.ls(cov=hac) series02 c series02(-1) 
 
-// Consider the [NFCI](https://fred.stlouisfed.org/series/NFCI) series 
+// Consider the 
 
 equation eq1.ls(cov=hac) nfci c nfci(-1) 
 equation eq2.ls(cov=hac) risk c risk(-1) 
