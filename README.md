@@ -39,7 +39,6 @@ correlate y x
 // Obtain a regression model for y on x
 regress y x
 
-
 //----------------------------------------------------
 // Creating a log-file in STATA to save commands
 //----------------------------------------------------
