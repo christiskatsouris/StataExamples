@@ -104,7 +104,21 @@ Both Example 1 and Example 2 which implement a short simulation study are very i
 ```Stata
 
 // Consider the linear regression model with multiple regressors
-wage = b0 + b1 * female + b2 * educ + u
+// wage = b0 + b1 * female + b2 * educ + u
+
+regress wage female educ
+
+// Consider the variable 'brthord' as an IV for 'educ' in the simple wage regression
+// log(wage) = b0 + b1 * educ
+
+regress l_wage educ
+
+// Consider the reduced form equation such that 
+// educ = a0 + a1 * sibs + a2 * brthord + v
+
+// Notice that we need that a2 to be different than zero so that the parameter beta in the structural econometric model to be identified. Thus, we need to check whether the identification assumption holds by checking the t-test under the null hypothesis, H0: a2 = 0.
+
+regress educ sibs brthord
 
 ```
 
@@ -115,7 +129,7 @@ wage = b0 + b1 * female + b2 * educ + u
 // Consider the Crime dataset in Stata
 // In particular we are interested to study the effect of Medical Marijuana Laws on Crime
 
-egen Murder_crime_ave = mean( Murder_crime),by(Year)
+egen Murder_crime_ave  = mean( Murder_crime),by(Year)
 egen Violent_crime_ave = mean( Violent_crime),by(Year) 
 
 ```
