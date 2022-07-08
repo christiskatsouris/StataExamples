@@ -498,5 +498,10 @@ risk.buroot(adf,trend)
 credit.buroot(adf,trend)
 leverage.buroot(adf,trend)
 
-
 ```
+
+# Disclaimer
+
+The author declares no conflicts of interest. 
+
+The above sections correspond to various useful coding procedures implemented in Stata that are suitable for related Econometrics and Time Series Econometics courses.  
