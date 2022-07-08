@@ -167,7 +167,9 @@ simulate b= r(b) se= r(se) t= r(t) , reps(500) : myprog
 
 ### Remarks:
 
-Both Example 1 and Example 2 which implement a short simulation study are very important in helping us understand the large sample properties of parameter estimates in a Simple Linear Regression model as well as in a first-order AR(1) regression model. Furthermore, many applications in classical econometric analysis require the use of multiple regression models. In particular, data applications and various examples from empirical studies based on the multiple regression model in Stata can be found in the  book of Wooldridge (2015). Here, we present some key applications for the purpose of illustration.  
+Both Example 1 and Example 2 which implement a short simulation study are very important in helping us understand the large sample properties of parameter estimates in a Simple Linear Regression model as well as in a first-order AR(1) regression model. Additionally, the main idea behind the construction of the above computer coding procedure provides some useful insights regarding the use of logical analysis use of inductive reasoning which is also very useful when considering the validity of inference assumptions as well as the appropriatness of statistical models under different econometric conditions.
+
+Furthermore, many applications in classical econometric analysis require the use of multiple regression models. In particular, data applications and various examples from empirical studies based on the multiple regression model in Stata can be found in the  book of Wooldridge (2015). Here, we present some key applications for the purpose of illustration.  
 
 ## Example 3: Multiple Regression Analysis 
 
