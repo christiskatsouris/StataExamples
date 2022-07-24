@@ -169,9 +169,11 @@ simulate b= r(b) se= r(se) t= r(t) , reps(500) : myprog
 
 - Both Example 1 and Example 2 which implement a short simulation study are very important in helping us understand the large sample properties of parameter estimates in a Simple Linear Regression model as well as in a first-order AR(1) regression model. Additionally, the main idea behind the construction of the above computer coding procedure provides some useful insights regarding the use of logical analysis and inductive reasoning which is also very useful when considering the validity of inference assumptions as well as the appropriatness of statistical models under different econometric conditions.
 
-- According to [Bekkerman (2015)](https://wires.onlinelibrary.wiley.com/doi/10.1002/wics.1342) "Simulations provide an opportunity to fully design the data generation process, introduce aspects that mimic common empirical problems, and assess estimators' quality under numerous alternative conditions". 
+- According to [Bekkerman (2015)](https://wires.onlinelibrary.wiley.com/doi/10.1002/wics.1342), simulations provide an opportunity to fully design the data generation process, introduce aspects that mimic common empirical problems, and assess estimators' quality under numerous alternative conditions. Furthermore, the author mentiones that:
 
-Furthermore, many applications in classical econometric analysis require the use of multiple regression models. In particular, data applications and various examples from empirical studies based on the multiple regression model in Stata can be found in the  book of Wooldridge (2015). Here, we present some key applications for the purpose of illustration.  
+> "Simulation methods can be effective in describing challenging foundational concepts, providing an effectively limitless, flexible learning environment in which theoretical topics can be represented and studied using data. This will improve students' abilities to develop a deeper knowledge of essential econometric concepts, efficiently work with large datasets, and acquire and hone the skills to effectively use simulation methods and design new ones."
+
+Many applications in classical econometric analysis require the use of multiple regression models. In particular, data applications and various examples from empirical studies based on the multiple regression model in Stata can be found in the book of Wooldridge (2015). Here, we present some key applications.  
 
 ## Example 3: Multiple Regression Analysis 
 
