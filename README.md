@@ -173,7 +173,7 @@ simulate b= r(b) se= r(se) t= r(t) , reps(500) : myprog
 
 > "Simulations provide an opportunity to fully design the data generation process, introduce aspects that mimic common empirical problems, and assess estimators' quality under numerous alternative conditions". 
 
-Furthermore, the author mentiones that:
+Furthermore, the author emphasizes that:
 
 > "Simulation methods can be effective in describing challenging foundational concepts, providing an effectively limitless, flexible learning environment in which theoretical topics can be represented and studied using data. This will improve students' abilities to develop a deeper knowledge of essential econometric concepts, efficiently work with large datasets, and acquire and hone the skills to effectively use simulation methods and design new ones."
 
