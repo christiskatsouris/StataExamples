@@ -517,3 +517,7 @@ leverage.buroot(adf,trend)
 The author declares no conflicts of interest. 
 
 The above sections correspond to various useful coding procedures implemented in Stata that are suitable for related Econometrics and Time Series Econometics courses.  
+
+# How to Cite a Website
+
+See: https://www.mendeley.com/guides/web-citation-guide/
