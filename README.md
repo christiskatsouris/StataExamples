@@ -169,7 +169,9 @@ simulate b= r(b) se= r(se) t= r(t) , reps(500) : myprog
 
 - Both Example 1 and Example 2 which implement a short simulation study are very important in helping us understand the large sample properties of parameter estimates in a Simple Linear Regression model as well as in a first-order AR(1) regression model. Additionally, the main idea behind the construction of the above computer coding procedure provides some useful insights regarding the use of logical analysis and inductive reasoning which is also very useful when considering the validity of inference assumptions as well as the appropriatness of statistical models under different econometric conditions.
 
-- Furthermore, many applications in classical econometric analysis require the use of multiple regression models. In particular, data applications and various examples from empirical studies based on the multiple regression model in Stata can be found in the  book of Wooldridge (2015). Here, we present some key applications for the purpose of illustration.  
+- According to "Simulations provide an opportunity to fully design the data generation process, introduce aspects that mimic common empirical problems, and assess estimators' quality under numerous alternative conditions". 
+
+Furthermore, many applications in classical econometric analysis require the use of multiple regression models. In particular, data applications and various examples from empirical studies based on the multiple regression model in Stata can be found in the  book of Wooldridge (2015). Here, we present some key applications for the purpose of illustration.  
 
 ## Example 3: Multiple Regression Analysis 
 
@@ -211,12 +213,16 @@ egen Violent_crime_ave = mean( Violent_crime),by(Year)
 
 ### References
 
+- Bekkerman, A. (2015). The role of simulations in econometrics pedagogy. Wiley Interdisciplinary Reviews: Computational Statistics, 7(2), 160-165.
+
 - Morris, R. G., TenEyck, M., Barnes, J. C., & Kovandzic, T. V. (2014). The effect of medical marijuana laws on crime: evidence from state panel data, 1990-2006. PloS one, 9(3), e92816.
+
 
 ## Further Reading 
 
 - Stock, J. & Watson, M. (2016). Introduction to econometrics. London: Addison-Wesley.
 - Wooldridge, J.M. (2020). Introductory econometrics: A modern approach (7th ed.).
+- Robert, C. P., Casella, G., & Casella, G. (2010). Introducing monte carlo methods with r (Vol. 18). New York: Springer.
 
 Greek Bibliography:
 - Δριτσάκη, Χ. Ν., & Δριτσάκη, Μ. Ν. (2013). Εισαγωγή στην Οικονομετρία με τη χρήση του λογισμικού EVIEWS. Εκδόσεις Κλειδάριθμος.
