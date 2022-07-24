@@ -80,7 +80,7 @@ We begin by considering a small simulation study for the parameter of a linear r
 
 $$ y_i = \beta x_i + e_i, \ \ \ \text{for} \ \ i = 1,...,n.$$
 
-Suppose that ei is an i.i.d sequence of random variables that have a N(0,1) distribution. Write a short programme in Stata for a simulation study using the following parameters
+Suppose that $e_i$ is an i.i.d sequence of random variables that have a N(0,1) distribution. Write a short programme in Stata for a simulation study using the following parameters
 
 $$n = 50, \ \ \beta = ( 0.5, 0.7, 0.9 ) \ \ \ \text{and} \ \ B = 500.$$
 
