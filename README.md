@@ -226,9 +226,9 @@ egen Violent_crime_ave = mean( Violent_crime),by(Year)
 
 ## Further Reading 
 
-- Stock, J. & Watson, M. (2016). Introduction to econometrics. London: Addison-Wesley.
-- Wooldridge, J.M. (2020). Introductory econometrics: A modern approach (7th ed.).
-- Robert, C. P., Casella, G., & Casella, G. (2010). Introducing monte carlo methods with r (Vol. 18). New York: Springer.
+- Stock, J. & Watson, M. (2016). Introduction to Econometrics. London: Addison-Wesley.
+- Wooldridge, J.M. (2020). Introductory Econometrics: A Modern Approach (7th ed.).
+- Robert, C. P., Casella, G., & Casella, G. (2010). Introducing Monte Carlo Methods with R (Vol. 18). New York: Springer.
 
 Greek Bibliography:
 - Δριτσάκη, Χ. Ν., & Δριτσάκη, Μ. Ν. (2013). Εισαγωγή στην Οικονομετρία με τη χρήση του λογισμικού EVIEWS. Εκδόσεις Κλειδάριθμος.
