@@ -552,8 +552,13 @@ module purge
 module load Stata
 stata -b permexample1.do
 
-
 ``` 
+
+### Remarks:
+
+1. Note that in case that the stata-mp version is installed on the HPC facility then it can be used instead of the standard Stata version, since the latter has larger available memory allocation to handle large datasets or simulations which require the use of matrices with large dimensions.  
+
+2. Running the Stata script from the prompt line of the PowerShell can be sone using the command: sbatch name_of_Stata_file.slurm
 
 
 # Disclaimer
