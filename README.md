@@ -11,6 +11,10 @@ Installing Stata packages can be done using the following command:
 // the following installs the Stata package radf (i.e., for unit root testing)
 ssc install radf 
 
+// the following output indicates whether the package is correctly installed
+checking radf consistency and verifying not already installed...
+installing into C:\Users\...\...
+installation complete.
 
 ```
 
