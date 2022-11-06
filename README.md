@@ -4,6 +4,16 @@ In this teaching page we provide some useful examples for implementation in Stat
 
 To begin with, Stata even though is mainly a statistical language rather than an Object Oriented Programming Language, it has various build-in commands and there is also an active updating and constant development of statistical/econometric methodologies presented in the related literature by the research community. Some key commands are demonstrated throughout Sections A, B and C below which include model identification and estimation for different data structures.   
 
+Installing Stata packages can be done using the following command: 
+
+```Stata
+
+// the following installs the Stata package radf (i.e., for unit root testing)
+ssc install radf 
+
+
+```
+
 
 # [A]. Introduction to Econometrics 
 
@@ -73,7 +83,6 @@ svyset [pweight = weight], fpc(sampfrac)
 
 // Creating Estimates of Population Quantities
 svy: total y
-
 
 ```
 
