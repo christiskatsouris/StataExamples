@@ -1,6 +1,9 @@
-# StataExamples
+# Introduction-Stata 
 
 In this teaching page we provide some useful examples for implementation in Stata depending on the application of interest. 
+
+To begin with, Stata even though is mainly a statistical language rather than an Object Oriented Programming Language, it has various build-in commands and there is also an active updating and constant development of statistical/econometric methodologies presented in the related literature by the research community.  
+
 
 # [A]. Introduction to Econometrics 
 
