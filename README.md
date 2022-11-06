@@ -530,7 +530,7 @@ leverage.buroot(adf,trend)
 
 # [D]. Running Stata on a High Performance Computing (HPC) Facility 
 
-Running a Stata Script on an HPC facility can be indeed quite useful, especially when the econometric estimation step involves a large dataset with a high dimensional parameter space which usually requires computational power and certain execution time. Furthermore, when running Monte Carlo simulations, it is generally speaking a better practice to do this using an HPC facility although this doesn't necessarily mean that it is faster than personal computing per se.  
+Running a Stata Script on an HPC facility can be indeed quite useful, especially when the econometric estimation step involves a large dataset with a high dimensional parameter space which usually requires computational power and certain execution time. Furthermore, when running Monte Carlo simulations, it is generally speaking a better practice to do this using an HPC facility although this doesn't necessarily mean that it is faster than personal computing per se. However, with the correct use of the available computing resources and allocation of tasks, the execution time for simulation studies can be reduced.  
 
 
 
